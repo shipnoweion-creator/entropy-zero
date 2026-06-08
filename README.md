@@ -32,6 +32,7 @@ Where $P(x_i)$ represents the probability distribution of execution states withi
 ## 🚀 Architectural Blueprint
 
 ```mermaid
+
 graph TD
     A[Agent Workflow Run] --> B[Telemetry Interceptor]
     B --> C[State Entropy Calculator]
@@ -39,6 +40,8 @@ graph TD
     C -->|High Entropy Drift| E[Circuit Breaker Control]
     D -->|Budget Limit Crossed| E
     E -->|SIGKILL / Pause| F[Agent Environment Isolation]
+```
+
 ## Getting Started
 Clone the repository
 git clone [https://github.com/shipnoweion-creator/entropy-zero.git](https://github.com/shipnoweion-creator/entropy-zero.git)
