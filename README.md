@@ -1,5 +1,5 @@
 # entropy-zero
-
+Captain Powell
 An open-source telemetry and static analysis engine designed to monitor autonomous agent workflows, calculate runtime state entropy, and enforce algorithmic cost circuit breakers.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -39,3 +39,22 @@ graph TD
     C -->|High Entropy Drift| E[Circuit Breaker Control]
     D -->|Budget Limit Crossed| E
     E -->|SIGKILL / Pause| F[Agent Environment Isolation]
+## Getting Started
+Clone the repository
+git clone [https://github.com/shipnoweion-creator/entropy-zero.git](https://github.com/shipnoweion-creator/entropy-zero.git)
+cd entropy-zero
+
+Install core dependencies
+make install
+## Quick Usage Example
+from entropy_zero import EntropyMonitor, CircuitBreaker
+
+# Initialize tracking on an autonomous agent pipeline
+monitor = EntropyMonitor(threshold=0.85)
+breaker = CircuitBreaker(max_spend_usd=5.00)
+
+@monitor.track_state()
+@breaker.protect()
+def run_agent_loop(agent_input):
+    # Your multi-agent orchestration logic here
+    pass
